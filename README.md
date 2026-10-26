@@ -179,6 +179,48 @@ Có thể sử dụng **Git Clone** với URL của repository để tải mã n
 > - Kích thước file theo byte có thể khác số ký tự, đặc biệt với văn bản tiếng Việt mã hóa UTF-8.
 > - Chương trình chỉ đọc file, không chỉnh sửa nội dung file gốc.
 
+### 🧮 Bài 3 — Đọc, ghi file và tính toán
+
+<img width="786" height="476" alt="Ảnh bài 3" src="https://github.com/user-attachments/assets/d48db8e9-cd31-433c-ac7c-05c11629a28f" />
+
+#### 🎯 Nội dung thực hành
+
+- Đọc các biểu thức từ file `input3.txt`.
+- Xử lý các phép toán cộng, trừ, nhân, chia và dấu ngoặc đơn.
+- Tính toán theo thứ tự ưu tiên của các phép toán.
+- Hiển thị kết quả trên giao diện.
+- Ghi kết quả vào `output3.txt` theo dạng `biểu thức = kết quả`.
+- Không sử dụng phương thức `DataTable.Compute` theo yêu cầu đề bài.
+
+#### 🛠️ Cách thực hiện
+
+- Sử dụng `StreamReader` với mã hóa UTF-8 để đọc toàn bộ file đầu vào.
+- Hiển thị nội dung trong ô `rtbND`.
+- Sử dụng `StringReader` để đọc từng dòng và bỏ qua các dòng trống.
+- Gọi lớp `TinhBieuThuc` để tính giá trị từng biểu thức.
+- Tạo kết quả theo dạng `biểu thức = kết quả`.
+- Sử dụng `CultureInfo.InvariantCulture` để xuất số với dấu chấm thập phân.
+- Ghi kết quả bằng `StreamWriter` với mã hóa UTF-8 và hiển thị trong ô `rtbKQ`.
+- Nếu một biểu thức bị lỗi, ghi thông báo cho dòng đó và tiếp tục xử lý các dòng còn lại.
+
+#### ▶️ Hướng dẫn sử dụng
+
+1. Chuẩn bị file `input3.txt`, mỗi dòng chứa một biểu thức.
+2. Đặt file trong cùng thư mục với file thực thi, thường là `bin/Debug/net10.0-windows`.
+3. Mở **Bài 3** từ giao diện chính.
+4. Nhấn **ĐỌC FILE** để hiển thị các biểu thức.
+5. Sau khi đọc thành công, nút **TÍNH VÀ GHI FILE** được bật.
+6. Nhấn **TÍNH VÀ GHI FILE** để xử lý các biểu thức và lưu kết quả.
+7. Xem kết quả trên giao diện hoặc mở file `output3.txt` theo đường dẫn trong thông báo.
+
+> [!NOTE]
+> - Nút **TÍNH VÀ GHI FILE** bị vô hiệu hóa khi vừa mở form hoặc khi đọc file thất bại.
+> - Dòng trống trong dữ liệu đầu vào được bỏ qua.
+> - Biểu thức bị lỗi được ghi theo dạng `biểu thức = Lỗi: thông báo lỗi`.
+> - File `output3.txt` được tạo nếu chưa tồn tại; nếu đã tồn tại, nội dung cũ sẽ bị ghi đè.
+> - Khi đọc file thành công, phần kết quả cũ trên giao diện được xóa để chuẩn bị cho lần tính tiếp theo.
+
+
 
 ### 🎬 Bài 5 – Bán vé xem phim
 
