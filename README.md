@@ -53,7 +53,7 @@ Nội dung thực hành:
 - 🎓 **Bài 4 — Đọc và ghi file sử dụng BinaryFormatter (JsonSerializer)**
 - 🎬 **Bài 5 — Quản lý phòng vé**
 - 🍜 **Bài 6 — Hôm nay ăn gì?**
-- 📁 **Duyệt thư mục**
+- 📁 **Bài 7 - Duyệt thư mục**
 
 ---
 
@@ -105,7 +105,41 @@ Có thể sử dụng **Git Clone** với URL của repository để tải mã n
 
 ---
 
-## 🎯 Các chức năng nổi bật
+## 📚 NỘI DUNG THỰC HÀNH
+
+### 📄 Bài 1 — Đọc và ghi file văn bản
+
+<img width="644" height="359" alt="Ảnh bài 1" src="https://github.com/user-attachments/assets/b6105556-1e60-428e-9258-14405a28b01b" />
+
+#### 🎯 Nội dung thực hành
+
+- Đọc toàn bộ nội dung từ file `input1.txt`.
+- Hiển thị nội dung đọc được lên giao diện.
+- Chuyển toàn bộ nội dung sang chữ in hoa.
+- Ghi nội dung sau khi chuyển đổi vào file `output1.txt`.
+
+#### 🛠️ Cách thực hiện
+
+- Sử dụng `StreamReader` với mã hóa UTF-8 và phương thức `ReadToEnd()` để đọc toàn bộ file.
+- Hiển thị nội dung trong ô `rtbKQ`.
+- Sử dụng `ToUpper()` để chuyển nội dung sang chữ in hoa.
+- Sử dụng `StreamWriter` với mã hóa UTF-8 để ghi kết quả.
+- Xử lý lỗi đọc và ghi file bằng `try-catch`.
+
+#### ▶️ Hướng dẫn sử dụng
+
+1. Chuẩn bị file `input1.txt` trong cùng thư mục với file thực thi của chương trình, thường là `bin/Debug/net10.0-windows`.
+2. Mở **Bài 1** từ giao diện chính.
+3. Nhấn **ĐỌC FILE** để hiển thị nội dung lên giao diện.
+4. Sau khi đọc thành công, nút **GHI FILE** được bật.
+5. Nhấn **GHI FILE** để chuyển nội dung thành chữ in hoa và lưu vào `output1.txt`.
+6. Xem đường dẫn trong thông báo và mở file đầu ra để kiểm tra.
+
+> [!NOTE]
+> - Nút **GHI FILE** bị vô hiệu hóa khi vừa mở form và chỉ được bật sau khi đọc file thành công.
+> - File `output1.txt` được tạo nếu chưa tồn tại; nếu đã tồn tại, nội dung cũ sẽ bị ghi đè.
+> - Nội dung trên giao diện vẫn giữ nguyên sau khi ghi; chữ in hoa được lưu trong file đầu ra.
+> - Nếu không đọc hoặc ghi được file, chương trình hiển thị thông báo lỗi.
 
 ### 🎬 Bài 5 – Bán vé xem phim
 
