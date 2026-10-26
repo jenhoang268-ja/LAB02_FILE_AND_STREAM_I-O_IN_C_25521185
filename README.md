@@ -14,7 +14,9 @@
   <a href ="https://learn.microsoft.com/vi-vn/dotnet/desktop/winforms/" target="_blank" rel="noopener noreferrer">
      <img src="https://img.shields.io/badge/Windows_Forms-0078D4?style=for-the-badge&logo=windows&logoColor=white" alt="Windows Forms" />
   </a>
-  <img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge" alt="SQLite">
+  <a href="https://www.sqlite.org/">
+     <img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite">
+  </a>
   <a href ="https://git-scm.com/" target="_blank" rel="noopener noreferrer">
      <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
   </a>
