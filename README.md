@@ -1,7 +1,7 @@
-<h1 align="center">📂 LAB 2 – FILE AND STREAM I/O</h1>
+<h1 align="center">📂 LAB 2 – FILE AND STREAM I/O IN C#</h1>
 
 <p align="center">
-  <em>Bài thực hành C# Windows Forms về đọc ghi tệp, xử lý dữ liệu và quản lý thư mục.</em>
+  <em>Bài thực hành C# Windows Forms.</em>
 </p>
 
 <p align="center">
