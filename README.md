@@ -1,7 +1,7 @@
 <h1 align="center">📂 LAB 2 – FILE AND STREAM I/O IN C#</h1>
 
 <p align="center">
-  <em>Bài thực hành C# Windows Forms.</em>
+  <em>Bài thực hành C# Windows Forms về đọc ghi tệp, xử lý dữ liệu và quản lý thư mục.</em>
 </p>
 
 <p align="center">
@@ -34,14 +34,16 @@
 | **Họ và tên** | Trương Vũ Hoàng Ngân |
 | **MSSV** | 25521185 |
 | **Môn học** | Lập trình mạng căn bản |
-| **Bài thực hành** | Lab 2 – File and Stream I/O |
-| **Hình thức** | Cá nhân |
+| **Bài thực hành** | Lab 2 – File and Stream I/O in C#|
 
 ---
 
 ## 📖 Giới thiệu
 
-Ứng dụng tập hợp các bài thực hành Lab 2 trên một giao diện Windows Forms. Người dùng chọn bài tập từ form chính để thực hiện các chức năng tương ứng.
+Ứng dụng tập hợp các bài thực hành Lab 2 trên một giao diện Windows Forms. Người dùng chọn bài tập từ form chính để thực hiện các chức năng từng bài tương ứng.
+
+<img width="653" height="374" alt="Ảnh form chính" src="https://github.com/user-attachments/assets/27a509d0-aae1-4115-9f61-3e4cac8e6525" />
+
 
 Nội dung thực hành tập trung vào:
 
