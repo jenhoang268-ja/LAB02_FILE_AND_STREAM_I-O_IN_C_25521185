@@ -45,13 +45,15 @@
 <img width="653" height="374" alt="Ảnh form chính" src="https://github.com/user-attachments/assets/27a509d0-aae1-4115-9f61-3e4cac8e6525" />
 
 
-Nội dung thực hành tập trung vào:
+Nội dung thực hành:
 
-- 📄 **Đọc và ghi tệp:** tiếp nhận, xử lý và lưu dữ liệu.
-- ✅ **Xác thực dữ liệu:** kiểm tra thông tin trước khi xử lý.
-- 🎬 **Bán vé xem phim:** kế thừa chương trình Bài 4 Lab 1.
-- 🍜 **Hôm nay ăn gì?:** kế thừa chương trình Bài 8 Lab 1 và bổ sung lưu trữ SQLite.
-- 📁 **Duyệt thư mục:** hiển thị cấu trúc thư mục và xem nội dung tệp.
+- 📄 **Bài 1 — Đọc và ghi file**
+- 🔍 **Bài 2 — Đọc thông tin file .txt**
+- 🧮 **Bài 3 — Đọc, ghi file và tính toán**
+- 🎓 **Bài 4 — Đọc và ghi file sử dụng BinaryFormatter (JsonSerializer)**
+- 🎬 **Bài 5 — Quản lý phòng vé**
+- 🍜 **Bài 6 — Hôm nay ăn gì?**
+- 📁 **Duyệt thư mục**
 
 ---
 
