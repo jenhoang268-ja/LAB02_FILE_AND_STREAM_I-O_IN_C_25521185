@@ -209,22 +209,13 @@ Chi tiết test case, kết quả thực tế và hình ảnh giao diện của 
 Các ảnh sử dụng trong ứng dụng được lưu trong thư mục **`Resources`**.
 
 > [!IMPORTANT]
-> Giữ đầy đủ các ảnh, tệp `.resx` và mã Designer. Khi đổi tên ảnh, cần cập nhật đường dẫn tham chiếu tương ứng để tránh lỗi Build hoặc lỗi mở giao diện.
-
----
-
-## 📌 Lưu ý khi sử dụng mã nguồn
-
-- Ứng dụng Windows Forms chạy trên **Windows**.
-- Chuẩn bị tệp đầu vào theo yêu cầu từng bài.
-- Khôi phục NuGet và Build trước lần chạy đầu tiên.
-- Các thư mục `bin`, `obj`, `.vs` và `.vs_backup` không cần đưa vào repository.
-- Bài 6 sử dụng SQLite, không yêu cầu cài SQL Server.
+> - Giữ đầy đủ các ảnh, tệp `.resx` và mã Designer.
+> - Khi đổi tên ảnh, cần cập nhật đường dẫn tham chiếu tương ứng để tránh lỗi Build hoặc lỗi mở giao diện.
 
 ---
 
 <p align="center">
-  <b>📚 LAB 2 – LẬP TRÌNH MẠNG CĂN BẢN</b>
+  <b> LAB 2 – LẬP TRÌNH MẠNG CĂN BẢN</b>
   <br>
   <em>Trương Vũ Hoàng Ngân · 25521185</em>
 </p>
