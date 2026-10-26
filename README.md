@@ -521,7 +521,6 @@ Các ảnh sử dụng trong ứng dụng được lưu trong thư mục **`Reso
 
 > [!IMPORTANT]
 > - Giữ đầy đủ các ảnh, tệp `.resx` và mã Designer.
-> - Khi đổi tên ảnh, cần cập nhật đường dẫn tham chiếu tương ứng để tránh lỗi Build hoặc lỗi mở giao diện.
 
 ---
 
