@@ -1,0 +1,38 @@
+﻿[
+  {
+    "Name": "Nguy\u1EC5n V\u0103n A",
+    "MSSV": 16520001,
+    "Phone": "0143532064",
+    "Mon1": 9.75,
+    "Mon2": 7.5,
+    "Mon3": 6.5,
+    "DiemTrungBinh": 0
+  },
+  {
+    "Name": "Nguy\u1EC5n V\u0103n B",
+    "MSSV": 16052002,
+    "Phone": "0365749825",
+    "Mon1": 9.25,
+    "Mon2": 7.75,
+    "Mon3": 9.75,
+    "DiemTrungBinh": 0
+  },
+  {
+    "Name": "Hu\u1EF3nh V\u0103n H",
+    "MSSV": 25781600,
+    "Phone": "0987452742",
+    "Mon1": 8.75,
+    "Mon2": 7.25,
+    "Mon3": 9.5,
+    "DiemTrungBinh": 0
+  },
+  {
+    "Name": "V\u0103n Th\u1ECB C",
+    "MSSV": 25521187,
+    "Phone": "0253765876",
+    "Mon1": 7.25,
+    "Mon2": 8.25,
+    "Mon3": 9,
+    "DiemTrungBinh": 0
+  }
+]

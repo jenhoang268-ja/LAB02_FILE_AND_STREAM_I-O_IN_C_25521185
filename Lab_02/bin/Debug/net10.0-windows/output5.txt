@@ -1,0 +1,30 @@
+﻿THỐNG KÊ PHÒNG VÉ
+
+Xếp hạng: 1
+Tên phim: Đào, phở và piano
+Vé đã bán: 3
+Vé tồn: 42
+Tỷ lệ bán: 6,67%
+Doanh thu: 270.000 đồng
+--------------------------------
+Xếp hạng: 2
+Tên phim: Gặp lại chị bầu
+Vé đã bán: 0
+Vé tồn: 15
+Tỷ lệ bán: 0,00%
+Doanh thu: 0 đồng
+--------------------------------
+Xếp hạng: 3
+Tên phim: Mai
+Vé đã bán: 0
+Vé tồn: 30
+Tỷ lệ bán: 0,00%
+Doanh thu: 0 đồng
+--------------------------------
+Xếp hạng: 4
+Tên phim: Tarot
+Vé đã bán: 0
+Vé tồn: 15
+Tỷ lệ bán: 0,00%
+Doanh thu: 0 đồng
+--------------------------------

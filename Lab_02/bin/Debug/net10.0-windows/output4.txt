@@ -1,0 +1,38 @@
+﻿[
+  {
+    "Name": "Nguyễn Văn A",
+    "MSSV": 16520001,
+    "Phone": "0143532064",
+    "Mon1": 9.75,
+    "Mon2": 7.5,
+    "Mon3": 6.5,
+    "DiemTrungBinh": 7.9166665
+  },
+  {
+    "Name": "Nguyễn Văn B",
+    "MSSV": 16052002,
+    "Phone": "0365749825",
+    "Mon1": 9.25,
+    "Mon2": 7.75,
+    "Mon3": 9.75,
+    "DiemTrungBinh": 8.916667
+  },
+  {
+    "Name": "Huỳnh Văn H",
+    "MSSV": 25781600,
+    "Phone": "0987452742",
+    "Mon1": 8.75,
+    "Mon2": 7.25,
+    "Mon3": 9.5,
+    "DiemTrungBinh": 8.5
+  },
+  {
+    "Name": "Văn Thị C",
+    "MSSV": 25521187,
+    "Phone": "0253765876",
+    "Mon1": 7.25,
+    "Mon2": 8.25,
+    "Mon3": 9,
+    "DiemTrungBinh": 8.166667
+  }
+]
