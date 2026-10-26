@@ -220,102 +220,63 @@ Có thể sử dụng **Git Clone** với URL của repository để tải mã n
 > - File `output3.txt` được tạo nếu chưa tồn tại; nếu đã tồn tại, nội dung cũ sẽ bị ghi đè.
 > - Khi đọc file thành công, phần kết quả cũ trên giao diện được xóa để chuẩn bị cho lần tính tiếp theo.
 
+### 🎓 Bài 4 — Đọc và ghi file sử dụng BinaryFormatter (JsonSerializer)
 
+<img width="1126" height="490" alt="Ảnh bài 4" src="https://github.com/user-attachments/assets/bdba292f-894d-47f3-9ad7-9931627addb3" />
 
-### 🎬 Bài 5 – Bán vé xem phim
+#### 🎯 Nội dung thực hành
 
-Chương trình phát triển từ Bài 4 Lab 1, bổ sung thao tác với tệp theo yêu cầu Lab 2.
+- Nhập danh sách sinh viên và ghi vào file `input4.txt` bằng `JsonSerializer`.
+- Đọc lại danh sách, tính điểm trung bình của ba môn và ghi kết quả vào `output4.txt`.
+- Hiển thị lần lượt từng sinh viên trên giao diện.
 
-**Chức năng:**
+#### 🛠️ Cách thực hiện
 
-- Đọc dữ liệu cấu hình phim từ tệp đầu vào.
-- Chọn phim, phòng chiếu và ghế ngồi.
-- Tính tiền vé và xác nhận thanh toán.
-- Thống kê kết quả bán vé.
-- Xuất dữ liệu ra tệp và hiển thị tiến độ.
+- Lưu thông tin sinh viên bằng lớp `SinhVien`, gồm họ tên, MSSV, điện thoại, điểm ba môn và điểm trung bình.
+- Quản lý danh sách nhập bằng `List<SinhVien>` và chuyển thành mảng khi ghi file.
+- Kiểm tra dữ liệu trước khi thêm sinh viên và sau khi đọc file.
+- Sử dụng `JsonSerializer.Serialize()` để chuyển danh sách thành JSON.
+- Sử dụng `JsonSerializer.Deserialize<SinhVien[]>()` để khôi phục mảng sinh viên.
+- Đọc và ghi file bằng mã hóa UTF-8; định dạng JSON có thụt dòng và hỗ trợ hiển thị tiếng Việt.
+- Tính điểm trung bình, lưu kết quả và hiển thị thông tin từng sinh viên.
+- Sử dụng **Back**, **Next** để chuyển trang.
 
-**Cách sử dụng:**
+#### ✅ Điều kiện dữ liệu
 
-1. Chuẩn bị tệp cấu hình đúng định dạng.
-2. Nhấn nút đọc Input và chọn tệp.
-3. Chọn phim, phòng chiếu và ghế.
-4. Kiểm tra số tiền rồi thực hiện thanh toán.
-5. Sử dụng nút thống kê hoặc xuất tệp khi cần.
+| Thông tin | Điều kiện |
+|-----------|-----------|
+| Họ tên | Không được để trống hoặc chỉ chứa khoảng trắng |
+| MSSV | Đúng 8 chữ số, không bắt đầu bằng `0` |
+| Điện thoại | Đúng 10 chữ số, bắt đầu bằng `0` |
+| Điểm mỗi môn | Từ `0` đến `10`, không nhận NaN hoặc vô cực |
+| Trùng MSSV | Không cho phép trong danh sách nhập hoặc dữ liệu đọc từ file |
 
-> [!IMPORTANT]
-> Tệp đầu vào cần đúng định dạng mà chương trình yêu cầu để dữ liệu phim được đọc chính xác.
+#### ▶️ Hướng dẫn sử dụng
 
-### 🍜 Bài 6 – Hôm nay ăn gì?
-
-Chương trình phát triển từ Bài 8 Lab 1, sử dụng SQLite để lưu món ăn, hình ảnh và thông tin người đóng góp.
-
-| Chức năng | Mô tả |
-| :--- | :--- |
-| **Thêm món ăn** | Lưu tên món, ảnh và người đóng góp |
-| **Hiển thị danh sách** | Hiển thị số thứ tự, tên món và người đóng góp |
-| **Chọn ngẫu nhiên** | Chọn một món trong cơ sở dữ liệu |
-| **Hiển thị kết quả** | Hiển thị tên món, ảnh và người đóng góp |
-| **Xóa món ăn** | Xóa món đang chọn sau khi xác nhận |
-
-**Cách sử dụng:**
-
-1. Nhập tên món ăn.
-2. Chọn người đóng góp.
-3. Chọn hình ảnh cho món ăn.
-4. Nhấn **Thêm** để lưu.
-5. Nhấn nút tìm món để chọn ngẫu nhiên.
-6. Muốn xóa, chọn món trong danh sách rồi nhấn **Xóa**.
+1. Mở **Bài 4** từ giao diện chính.
+2. Nhập họ tên, MSSV, điện thoại và điểm ba môn.
+3. Nhấn **Add** để thêm sinh viên vào danh sách.
+4. Lặp lại thao tác để thêm các sinh viên khác.
+5. Nhấn **Write** để ghi danh sách vào `input4.txt`.
+6. Nhấn **Read** để đọc file, kiểm tra dữ liệu, tính điểm trung bình và ghi vào `output4.txt`.
+7. Xem thông tin sinh viên và điểm trung bình ở phần kết quả.
+8. Nhấn **Back** hoặc **Next** để xem sinh viên trước hoặc tiếp theo.
 
 > [!NOTE]
-> Khi chưa có cơ sở dữ liệu, chương trình tạo tệp `homnayangi.db` trong thư mục chạy. Cần thêm dữ liệu trước khi sử dụng chức năng chọn ngẫu nhiên.
+> - Cần thêm ít nhất một sinh viên trước khi nhấn **Write**.
+> - Nhấn **Add** chỉ thêm vào danh sách trong bộ nhớ; cần nhấn **Write** để lưu xuống file.
+> - **Read** đọc dữ liệu đã lưu trong `input4.txt`, không đọc trực tiếp danh sách vừa nhập trên giao diện.
+> - Hai file có phần mở rộng `.txt` nhưng nội dung được lưu dưới dạng JSON.
+> - File được lưu trong thư mục chạy chương trình, thường là `bin/Debug/net10.0-windows`.
+> - Mỗi lần ghi sẽ thay thế nội dung cũ của file tương ứng.
+> - Điểm trung bình trên giao diện được hiển thị với hai chữ số thập phân.
+> - Nhãn trang có dạng `1/3`, nghĩa là đang xem sinh viên thứ nhất trong tổng số ba sinh viên.
+> - Nút **Back** bị vô hiệu hóa ở trang đầu; nút **Next** bị vô hiệu hóa ở trang cuối.
+> - Chương trình thông báo khi dữ liệu không hợp lệ hoặc xảy ra lỗi đọc, ghi file.
 
-### 📁 Bài 7 – Duyệt thư mục và xem tệp
 
-**Chức năng:**
 
-- Hiển thị ổ đĩa, thư mục và tệp bằng `TreeView`.
-- Nạp danh sách thư mục con và tệp khi mở rộng nút.
-- Xem hình ảnh bằng `PictureBox`.
-- Xem nội dung văn bản bằng `RichTextBox`.
-- Thông báo khi không thể truy cập hoặc đọc dữ liệu.
 
-**Cách sử dụng:**
-
-1. Chọn ổ đĩa trên cây thư mục.
-2. Mở rộng các nút để tìm thư mục và tệp.
-3. Chọn tệp ảnh hoặc văn bản được hỗ trợ.
-4. Xem nội dung trong khu vực hiển thị.
-
-> [!TIP]
-> Có thể chuẩn bị một thư mục chứa ảnh và tệp `.txt` để kiểm tra nhanh chức năng xem nội dung.
-
----
-
-## 🔄 Quy trình xử lý chung
-
-| Bước | Nội dung |
-| :---: | :--- |
-| **1. Nhận sự kiện** | Tiếp nhận thao tác nhấn nút hoặc chọn dữ liệu |
-| **2. Đọc dữ liệu** | Lấy dữ liệu từ giao diện, tệp hoặc SQLite |
-| **3. Xác thực dữ liệu** | Kiểm tra dữ liệu trống, định dạng và điều kiện xử lý |
-| **4. Tính toán và xử lý** | Thực hiện yêu cầu tương ứng của bài tập |
-| **5. Hiển thị kết quả** | Cập nhật giao diện, thông báo hoặc lưu kết quả |
-
----
-
-## 🧪 Kiểm thử
-
-Các nhóm trường hợp cần kiểm tra:
-
-| Nhóm | Trường hợp kiểm thử |
-| :--- | :--- |
-| **Dữ liệu đầu vào** | Hợp lệ, trống, thiếu hoặc sai định dạng |
-| **Đọc ghi tệp** | Tệp tồn tại, không tồn tại hoặc không thể truy cập |
-| **Bán vé** | Chọn ghế, tính tiền, thanh toán và xuất kết quả |
-| **Món ăn** | Thêm món, danh sách trống, chọn ngẫu nhiên và xóa món |
-| **Thư mục** | Mở rộng thư mục, xem ảnh và đọc văn bản |
-
-Chi tiết test case, kết quả thực tế và hình ảnh giao diện của tất cả bài tập được trình bày trong **báo cáo PDF nộp kèm**.
 
 ---
 
