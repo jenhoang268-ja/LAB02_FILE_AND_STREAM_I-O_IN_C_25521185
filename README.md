@@ -18,7 +18,7 @@
   <a href ="https://git-scm.com/" target="_blank" rel="noopener noreferrer">
      <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
   </a>
-  <a href ="https://github.com/thanhnhi8769-ctrl/Baitap2-QuanLyNguoiDung.git" target="_blank" rel="noopener noreferrer">
+  <a href ="https://github.com/jenhoang268-ja/LAB02_FILE_AND_STREAM_I-O_IN_C_25521185" target="_blank" rel="noopener noreferrer">
      <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
   </a>
 </p>
