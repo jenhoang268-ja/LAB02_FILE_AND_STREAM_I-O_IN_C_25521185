@@ -274,9 +274,244 @@ Có thể sử dụng **Git Clone** với URL của repository để tải mã n
 > - Nút **Back** bị vô hiệu hóa ở trang đầu; nút **Next** bị vô hiệu hóa ở trang cuối.
 > - Chương trình thông báo khi dữ liệu không hợp lệ hoặc xảy ra lỗi đọc, ghi file.
 
+### 🎬 Bài 5 — Quản lý phòng vé
 
+<img width="934" height="628" alt="Ảnh bài 5" src="https://github.com/user-attachments/assets/8188bfb7-d5ac-4dbd-bfa5-1a1be3393efe" />
 
+#### 🎯 Nội dung thực hành
 
+- Kế thừa chương trình bán vé xem phim của **Bài 4 Lab 1**.
+- Bổ sung chức năng nhập cấu hình phim, ghi và đọc file `input5.txt`, thống kê theo phim và xuất kết quả vào `output5.txt`.
+- Sử dụng `ProgressBar` và nhãn phần trăm để theo dõi tiến độ xuất file.
+
+#### 📝 Các chức năng chính
+
+- Nhập, kiểm tra và lưu cấu hình phim vào file.
+- Đọc cấu hình để áp dụng tên phim, giá vé chuẩn và phòng chiếu.
+- Chọn phim qua các poster và chọn phòng chiếu hợp lệ.
+- Chọn hoặc bỏ chọn ghế trong sơ đồ 15 ghế mỗi phòng.
+- Tính tiền theo loại ghế và xác nhận thanh toán.
+- Cập nhật ghế đã mua, ngăn mua lại trong cùng phim và phòng chiếu.
+- Thống kê vé đã bán, vé tồn, tỷ lệ bán và doanh thu.
+- Xếp hạng phim theo doanh thu từ cao xuống thấp.
+- Xuất thống kê ra file UTF-8 và hiển thị tiến độ.
+
+#### 📥 Cấu trúc file input5.txt
+
+Mỗi phim gồm **3 dòng liên tiếp**:
+
+1. Tên phim.
+2. Giá vé chuẩn.
+3. Danh sách phòng chiếu, phân cách bằng dấu phẩy.
+
+**Điều kiện cấu hình:**
+- Tên phim phải khớp một trong bốn poster: `Đào, phở và piano`, `Mai`, `Gặp lại chị bầu`, `Tarot`.
+- Không khai báo trùng tên phim.
+- Giá vé phải lớn hơn `0`; nhập như `45000`, không kèm đơn vị tiền hoặc dấu phân cách hàng nghìn.
+- Phòng chiếu chỉ nhận `1`, `2`, `3` và không được trùng trong cùng một phim.
+- Không chèn dòng trống giữa các nhóm dữ liệu; có thể để dòng trống cuối file.
+
+#### 💺 Loại ghế và màu hiển thị
+
+| Loại hoặc trạng thái | Ghế áp dụng | Giá vé | Màu |
+|----------------------|-------------|--------|-----|
+| Vé vớt | A1, A5, C1, C5 | Giá chuẩn × 0.25 | Xanh da trời nhạt |
+| Vé thường | A2, A3, A4, B1, B5, C2, C3, C4 | Giá chuẩn × 1 | Trắng khói |
+| Vé VIP | B2, B3, B4 | Giá chuẩn × 2 | Vàng |
+| Đang chọn | Ghế được người dùng chọn | Theo loại ghế | Xanh lá nhạt |
+| Đã mua | Ghế đã thanh toán | Không thể chọn lại | Xám |
+
+#### ▶️ Hướng dẫn sử dụng
+
+**1. Nạp cấu hình phim**
+
+- Mở **Bài 5** từ giao diện chính.
+- Nhập hoặc chỉnh sửa dữ liệu trong ô cấu hình phim. Nếu ô đang trống khi mở form, chương trình điền dữ liệu mẫu.
+- Nhấn **Ghi input5** để lưu cấu hình vào `input5.txt`.
+- Nhấn **Đọc input5** để nạp và áp dụng dữ liệu đã lưu.
+
+**2. Chọn vé**
+
+- Nhập tên khách hàng.
+- Nhấn poster để chọn phim.
+- Chọn một phòng chiếu đang được bật.
+- Nhấn các ghế muốn mua; nhấn lại ghế đang chọn để bỏ chọn.
+- Khi đổi phim hoặc phòng, các ghế chưa thanh toán đang chọn sẽ được bỏ chọn.
+
+**3. Thanh toán**
+
+- Nhấn **Thanh toán**.
+- Kiểm tra tên khách hàng, phim, phòng, danh sách ghế, giá từng vé và tổng tiền.
+- Chọn **Có** để xác nhận hoặc **Không** để hủy thanh toán.
+- Sau khi xác nhận thành công, ghế chuyển sang màu xám và doanh thu được cập nhật.
+- Nhấn **OK** để đóng thông báo thành công.
+
+**4. Xem và xuất thống kê**
+
+- Nhấn **Thống kê** để xem bảng tổng hợp theo phim.
+- Nhấn **Xuất file** để ghi thống kê vào `output5.txt`.
+- Theo dõi thanh tiến trình và phần trăm từ `0%` đến `100%`.
+- Khi xuất xong, bảng thống kê được cập nhật và chương trình thông báo đường dẫn file.
+
+#### 📊 Nội dung thống kê
+
+| Thông tin | Cách xác định |
+|-----------|--------------|
+| Tổng số vé | Số phòng của phim × 15 ghế |
+| Vé đã bán | Tổng số ghế đã thanh toán của phim |
+| Vé tồn | Tổng số vé − Vé đã bán |
+| Tỷ lệ bán | Vé đã bán / Tổng số vé × 100% |
+| Doanh thu | Tổng số tiền từ các giao dịch đã xác nhận |
+| Xếp hạng | Doanh thu giảm dần; nếu bằng nhau, sắp theo tên phim tăng dần |
+
+> [!NOTE]
+> - Phải đọc cấu hình trước khi chọn phim và bán vé.
+> - Phải nhập tên khách hàng, chọn phim, phòng và ít nhất một ghế để thanh toán.
+> - Sau khi đã bán vé, chương trình không cho ghi hoặc nạp lại cấu hình trong phiên đó.
+> - Khi xuất file, các thao tác thay đổi dữ liệu bị khóa và không thể đóng form cho đến khi hoàn tất.
+> - Hai file được lưu trong thư mục chạy chương trình, thường là `bin/Debug/net10.0-windows`.
+> - Ghi cấu hình hoặc xuất thống kê sẽ ghi đè file tương ứng.
+> - Ghế đã mua và doanh thu chỉ được giữ trong bộ nhớ của phiên mở form.
+> - File `output5.txt` là báo cáo thống kê, không dùng để khôi phục giao dịch khi mở lại chương trình.
+
+### 🍜 Bài 6 — Hôm nay ăn gì?
+
+<img width="966" height="498" alt="Ảnh bài 6" src="https://github.com/user-attachments/assets/fb8df484-564b-4c49-9bfc-df503386d04c" />
+
+#### 🎯 Nội dung thực hành
+
+Kế thừa chương trình chọn món ăn của **Bài 8 Lab 1**, bổ sung lưu trữ và truy vấn dữ liệu bằng SQLite.
+
+- Chương trình cho phép thêm món ăn kèm hình ảnh, tên người đóng góp; hiển thị danh sách và chọn ngẫu nhiên một món ăn cùng thông tin liên quan.
+
+#### 🛠️ Các chức năng chính
+
+- **Khởi tạo dữ liệu:** Tự tạo cơ sở dữ liệu và các bảng nếu chưa tồn tại.
+- **Thêm món ăn:** Nhập tên món và tên người đóng góp ngay trong phần thêm món.
+- **Chọn ảnh:** Chọn ảnh minh họa và xem trước trên giao diện.
+- **Lưu SQLite:** Lưu món ăn, dữ liệu ảnh và người đóng góp vào `homnayangi.db`.
+- **Hiển thị danh sách:** Đọc dữ liệu và hiển thị bằng `ListView`.
+- **Chọn ngẫu nhiên:** Truy vấn một món bằng `ORDER BY RANDOM() LIMIT 1`.
+- **Hiển thị kết quả:** Hiển thị tên món, hình ảnh và tên người đóng góp.
+- **Đánh dấu món:** Chọn dòng tương ứng với kết quả ngẫu nhiên trong danh sách.
+- **Xóa món:** Xóa món đang chọn sau khi xác nhận.
+- **Thoát:** Đóng cửa sổ bài tập.
+
+#### 🗃️ Cấu trúc cơ sở dữ liệu
+
+Dữ liệu được lưu trong file **homnayangi.db**, gồm hai bảng:
+
+| Bảng | Trường dữ liệu | Ý nghĩa |
+|------|----------------|---------|
+| `NguoiDung` | `IDNCC` | Khóa chính, tự tăng |
+| `NguoiDung` | `HoVaTen` | Tên người đóng góp |
+| `NguoiDung` | `QuyenHan` | Quyền hạn, được gán là `Người dùng` khi thêm |
+| `MonAn` | `IDMA` | Khóa chính, tự tăng |
+| `MonAn` | `TenMonAn` | Tên món ăn |
+| `MonAn` | `HinhAnh` | Dữ liệu ảnh, lưu dưới dạng BLOB |
+| `MonAn` | `IDNCC` | Khóa ngoại liên kết với người đóng góp |
+
+- Hai bảng liên kết thông qua `IDNCC`. Chương trình bật kiểm tra khóa ngoại trên mỗi kết nối.
+- Khi thêm món, thông tin người đóng góp và món ăn được lưu trong cùng một giao dịch.
+- Chỉ xác nhận lưu khi cả hai bước đều thành công.
+
+#### ✅ Điều kiện dữ liệu
+
+- Tên món ăn không được để trống.
+- Tên người đóng góp không được để trống.
+- Phải chọn ảnh hợp lệ trước khi thêm món.
+- Các định dạng ảnh được chọn gồm `.jpg`, `.jpeg`, `.png` và `.bmp`.
+
+#### ▶️ Hướng dẫn sử dụng
+
+**1. Thêm món ăn**
+
+1. Mở **Bài 6** từ giao diện chính.
+2. Nhập tên món ăn.
+3. Nhập tên người đóng góp ngay trong phần thêm món ăn.
+4. Nhấn **Chọn ảnh**, chọn hình minh họa → nhấn **Mở**.
+5. Kiểm tra ảnh xem trước.
+6. Nhấn **Thêm món** để lưu vào cơ sở dữ liệu.
+7. Kiểm tra món vừa thêm trong danh sách.
+
+**2. Chọn món ngẫu nhiên**
+
+1. Nhấn nút **Tìm món ăn** để chọn ngẫu nhiên một món.
+2. Xem tên món, hình ảnh và người đóng góp trong phần kết quả.
+3. Món được chọn sẽ được đánh dấu trong danh sách.
+4. Nhấn lại để tiếp tục nhận gợi ý.
+
+**3. Xóa món ăn**
+
+1. Chọn một món trong danh sách.
+2. Nhấn **Xóa món ăn**.
+3. Chọn **Có** để xác nhận hoặc **Không** để hủy.
+4. Sau khi xóa thành công, danh sách được tải lại và kết quả đang hiển thị được xóa.
+
+**4. Thoát chương trình**
+
+Nhấn **Thoát** để đóng cửa sổ Bài 6.
+
+> [!NOTE]
+> - Dữ liệu được giữ lại khi đóng và mở lại chương trình.
+> - File `homnayangi.db` nằm trong thư mục chạy chương trình, thường là `bin/Debug/net10.0-windows`.
+> - Hình ảnh được lưu trực tiếp trong cơ sở dữ liệu, không chỉ lưu đường dẫn đến ảnh gốc.
+> - Cột **Số thứ tự** được đánh lại khi tải danh sách; mã món ăn vẫn được lưu nội bộ để tìm và xóa đúng món.
+> - Mỗi lần thêm món, chương trình tạo một bản ghi người đóng góp mới, kể cả khi tên đã tồn tại.
+> - Cho phép thêm các món trùng tên.
+> - Nếu danh sách trống, chương trình yêu cầu thêm món ăn.
+
+### 🗂️ Bài 7 - Duyệt thư mục
+
+<img width="711" height="379" alt="Ảnh bài 7" src="https://github.com/user-attachments/assets/d87fa47b-f738-44c9-918c-9cbd70b354c4" />
+
+#### 🎯 Nội dung thực hành
+
+- Xây dựng ứng dụng duyệt các ổ đĩa, thư mục và file trên máy tính.
+- Cho phép mở rộng thư mục bằng cách nhấn đúp chuột hoặc nhấn dấu mở rộng, đồng thời xem trước nội dung file khi chọn.
+
+#### 🛠️ Các chức năng chính
+
+- **Hiển thị ổ đĩa:** Liệt kê các ổ đĩa bằng `DriveInfo.GetDrives()`.
+- **Duyệt cây thư mục:** Hiển thị thư mục và file bằng `TreeView`.
+- **Mở thư mục:** Nhấn đúp hoặc nhấn dấu mở rộng để tải nội dung bên trong.
+- **Tải khi cần:** Chỉ đọc danh sách thư mục con và file khi mở rộng nút.
+- **Sắp xếp danh sách:** Sắp xếp tên không phân biệt chữ hoa, chữ thường; hiển thị thư mục trước, file sau.
+- **Xem văn bản:** Đọc nội dung bằng UTF-8 và hiển thị trong `RichTextBox`.
+- **Xem hình ảnh:** Hiển thị ảnh trong `PictureBox`.
+- **Hiển thị tên file:** Cập nhật tiêu đề khung nội dung theo file đang chọn.
+- **Thông báo lỗi:** Xử lý trường hợp không có quyền truy cập, không đọc được file hoặc định dạng chưa được hỗ trợ.
+
+#### 📋 Định dạng hỗ trợ xem trước
+
+| Nhóm | Phần mở rộng |
+|------|--------------|
+| Hình ảnh | `.jpg`, `.jpeg`, `.png`, `.bmp`, `.gif`, `.ico` |
+| Văn bản và dữ liệu | `.txt`, `.csv`, `.log`, `.json`, `.xml`, `.md`, `.ini` |
+| Mã nguồn | `.cs`, `.html`, `.css`, `.js`, `.sql` |
+
+Các định dạng văn bản được hiển thị dưới dạng nội dung thuần văn bản.
+
+#### ▶️ Hướng dẫn sử dụng
+
+1. Mở **Bài 7** từ giao diện chính.
+2. Chọn ổ đĩa trong cây thư mục.
+3. Nhấn dấu mở rộng hoặc nhấn đúp vào ổ đĩa, thư mục để xem nội dung bên trong.
+4. Tiếp tục mở các thư mục con để tìm file cần xem.
+5. Nhấn chọn một file:
+   - File ảnh được hỗ trợ sẽ hiển thị trong khung ảnh.
+   - File văn bản được hỗ trợ sẽ hiển thị trong khung văn bản.
+   - File chưa được hỗ trợ sẽ hiển thị thông báo kèm đường dẫn.
+6. Chọn file khác để chuyển nội dung xem trước.
+7. Đóng cửa sổ để kết thúc bài tập.
+
+> [!NOTE]
+> - Chỉ truy cập được các ổ đĩa và thư mục mà hệ điều hành cho phép.
+> - File văn bản có kích thước tối đa `2 × 1024 × 1024` byte được xem trước.
+> - Văn bản được đọc bằng UTF-8; file dùng bảng mã khác có thể hiển thị sai dấu.
+> - Khi chọn thư mục hoặc file khác, nội dung xem trước cũ được xóa.
+> - Ảnh được sao chép vào bộ nhớ để không giữ khóa file ảnh gốc.
+> - Danh sách của thư mục đã tải không tự cập nhật khi có thay đổi từ bên ngoài; có thể đóng và mở lại form để tải lại.
 
 ---
 
