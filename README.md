@@ -141,6 +141,45 @@ Có thể sử dụng **Git Clone** với URL của repository để tải mã n
 > - Nội dung trên giao diện vẫn giữ nguyên sau khi ghi; chữ in hoa được lưu trong file đầu ra.
 > - Nếu không đọc hoặc ghi được file, chương trình hiển thị thông báo lỗi.
 
+### 🔍 Bài 2 — Đọc thông tin một file .txt
+
+<img width="1082" height="462" alt="Ảnh bài 2" src="https://github.com/user-attachments/assets/a7280f46-54c3-48a1-b84a-42172e96a2ec" />
+
+#### 🎯 Nội dung thực hành
+
+- Chọn file văn bản bằng hộp thoại `OpenFileDialog`.
+- Đọc và hiển thị nội dung của file.
+- Hiển thị tên file, kích thước và đường dẫn đầy đủ.
+- Thống kê số dòng, số từ và số ký tự.
+
+#### 🛠️ Cách thực hiện
+
+- Sử dụng `OpenFileDialog` để chọn một file `.txt` có tồn tại.
+- Sử dụng `StreamReader` với mã hóa UTF-8 để đọc toàn bộ nội dung.
+- Sử dụng `FileInfo` để lấy kích thước và đường dẫn đầy đủ.
+- Sử dụng `StringReader.ReadLine()` để đếm số dòng.
+- Sử dụng biểu thức chính quy `\S+` để đếm các cụm ký tự không chứa khoảng trắng, được xem là các từ.
+- Sử dụng `noiDung.Length` để đếm số ký tự.
+- Hiển thị kết quả trên các ô thông tin và nội dung trong `RichTextBox`.
+- Xử lý lỗi đọc file bằng `try-catch`.
+
+#### ▶️ Hướng dẫn sử dụng
+
+1. Mở **Bài 2** từ giao diện chính.
+2. Nhấn nút **Read** để mở hộp thoại chọn file.
+3. Chọn một file `.txt` → nhấn **Open**.
+4. Xem nội dung và các thông tin thống kê trên giao diện.
+5. Nhấn **Read** lần nữa nếu muốn chọn file khác.
+6. Nhấn **Exit** để đóng cửa sổ bài tập.
+
+> [!NOTE]
+> - Có thể chọn file ở bất kỳ thư mục nào có quyền truy cập.
+> - Mỗi lần chỉ chọn một file `.txt`.
+> - File rỗng có số dòng, số từ và số ký tự đều bằng `0`.
+> - Kích thước file theo byte có thể khác số ký tự, đặc biệt với văn bản tiếng Việt mã hóa UTF-8.
+> - Chương trình chỉ đọc file, không chỉnh sửa nội dung file gốc.
+
+
 ### 🎬 Bài 5 – Bán vé xem phim
 
 Chương trình phát triển từ Bài 4 Lab 1, bổ sung thao tác với tệp theo yêu cầu Lab 2.
